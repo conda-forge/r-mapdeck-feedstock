@@ -3,7 +3,7 @@ About r-mapdeck
 
 Home: https://symbolixau.github.io/mapdeck/articles/mapdeck.html
 
-Package license: GPL-3
+Package license: GPL-3.0-only
 
 Feedstock license: BSD 3-Clause
 
