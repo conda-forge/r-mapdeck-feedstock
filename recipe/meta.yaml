@@ -66,7 +66,7 @@ test:
 
 about:
   home: https://symbolixau.github.io/mapdeck/articles/mapdeck.html
-  license: GPL-3
+  license: GPL-3.0-only
   summary: Provides a mechanism to plot an interactive map using 'Mapbox GL' (<https://www.mapbox.com/mapbox-gl-js/api/>),
     a javascript library for interactive maps, and 'Deck.gl' (<http://deck.gl/#/>),
     a javascript library which uses 'WebGL' for visualising large data sets.
