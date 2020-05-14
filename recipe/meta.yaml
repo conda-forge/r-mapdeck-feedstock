@@ -1,4 +1,4 @@
-{% set version = '0.3.2' %}
+{% set version = "0.3.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mapdeck_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mapdeck/mapdeck_{{ version }}.tar.gz
-  sha256: 8d5c267ccaa47e097ab2186eaccd39d9f3584f058a3b1dccc494dbb3db43be97
+  sha256: 4821e8fd2843512d76165dd03663139a0d224ff0e93f709a6956418998c67956
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -67,12 +67,10 @@ test:
 about:
   home: https://symbolixau.github.io/mapdeck/articles/mapdeck.html
   license: GPL-3.0-only
-  summary: Provides a mechanism to plot an interactive map using 'Mapbox GL' (<https://www.mapbox.com/mapbox-gl-js/api/>),
-    a javascript library for interactive maps, and 'Deck.gl' (<http://deck.gl/#/>),
-    a javascript library which uses 'WebGL' for visualising large data sets.
+  summary: Provides a mechanism to plot an interactive map using 'Mapbox GL' (<https://www.mapbox.com/mapbox-gl-js/api/>), a javascript library for interactive maps, and 'Deck.gl' (<http://deck.gl/#/>), a javascript library which uses 'WebGL' for visualising large data sets.
   license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
