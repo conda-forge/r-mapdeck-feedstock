@@ -1,4 +1,4 @@
-{% set version = "0.3.4" %}
+{% set version = "0.3.5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/mapdeck_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/mapdeck/mapdeck_{{ version }}.tar.gz
-  sha256: 196efe291019f25a2abd9326d48b590553ca0ca65826d942e7effca19771eb29
+  sha256: 82b93da4b1118496d3e0dfaccaad415335350b0871d1f6fdf195e2324173e39f
 
 build:
   merge_build_host: true  # [win]
-  number: 3
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
