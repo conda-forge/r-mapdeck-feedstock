@@ -18,13 +18,16 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  skip: true  # [win]
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ compiler('c') }}          # [not win]
+    - {{ stdlib('c') }}            # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
+    - {{ stdlib('m2w64_c') }}      # [win]
+    - {{ compiler('cxx') }}        # [not win]
+    - {{ compiler('m2w64_cxx') }}  # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -68,6 +71,7 @@ test:
 
 about:
   home: https://symbolixau.github.io/mapdeck/articles/mapdeck.html
+  dev_url: https://github.com/SymbolixAU/mapdeck
   license: GPL-3.0-only
   summary: Provides a mechanism to plot an interactive map using 'Mapbox GL' (<https://www.mapbox.com/mapbox-gl-js/api/>), a javascript library for interactive maps, and 'Deck.gl' (<http://deck.gl/#/>), a javascript library which uses 'WebGL' for visualising large data sets.
   license_family: GPL3
@@ -77,28 +81,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-
-# Package: mapdeck
-# Type: Package
-# Title: Interactive Maps Using 'Mapbox GL JS' and 'Deck.gl'
-# Version: 0.3.2
-# Date: 2020-04-05
-# Authors@R: c( person("David", "Cooley", ,"dcooley@symbolix.com.au", role = c("aut", "cre")) )
-# Description: Provides a mechanism to plot an interactive map using 'Mapbox GL' (<https://www.mapbox.com/mapbox-gl-js/api/>), a javascript library for interactive maps, and 'Deck.gl' (<http://deck.gl/#/>), a javascript library which uses 'WebGL' for visualising large data sets.
-# License: GPL-3
-# URL: https://symbolixau.github.io/mapdeck/articles/mapdeck.html
-# BugReports: https://github.com/SymbolixAU/mapdeck/issues
-# Encoding: UTF-8
-# LazyData: true
-# Depends: R (>= 3.5.0)
-# Imports: colourvalues (>= 0.3.4), googlePolylines (>= 0.7.2), geojsonsf (>= 1.3.3), htmlwidgets, jsonify (>= 1.1.1), magrittr, Rcpp, shiny, sfheaders (>= 0.2.1)
-# RoxygenNote: 7.1.0
-# Suggests: covr, googleway, jsonlite, knitr, rmarkdown, spatialwidget, testthat
-# VignetteBuilder: knitr
-# LinkingTo: BH, colourvalues, geojsonsf (>= 1.3.3), jsonify (>= 1.1.1), rapidjsonr, Rcpp, sfheaders (>= 0.2.1), spatialwidget (>= 0.2.2)
-# NeedsCompilation: yes
-# Packaged: 2020-04-05 10:17:44 UTC; dave
-# Author: David Cooley [aut, cre]
-# Maintainer: David Cooley <dcooley@symbolix.com.au>
-# Repository: CRAN
-# Date/Publication: 2020-04-05 11:10:02 UTC
