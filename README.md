@@ -13,6 +13,8 @@ Package license: GPL-3.0-only
 
 Summary: Provides a mechanism to plot an interactive map using 'Mapbox GL' (<https://www.mapbox.com/mapbox-gl-js/api/>), a javascript library for interactive maps, and 'Deck.gl' (<http://deck.gl/#/>), a javascript library which uses 'WebGL' for visualising large data sets.
 
+Development: https://github.com/SymbolixAU/mapdeck
+
 About r-mapdeck
 ---------------
 
@@ -21,6 +23,8 @@ Home: https://symbolixau.github.io/mapdeck/articles/mapdeck.html
 Package license: GPL-3.0-only
 
 Summary: Provides a mechanism to plot an interactive map using 'Mapbox GL' (<https://www.mapbox.com/mapbox-gl-js/api/>), a javascript library for interactive maps, and 'Deck.gl' (<http://deck.gl/#/>), a javascript library which uses 'WebGL' for visualising large data sets.
+
+Development: https://github.com/SymbolixAU/mapdeck
 
 Current build status
 ====================
