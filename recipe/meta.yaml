@@ -1,6 +1,5 @@
 {% set version = "0.3.5" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-mapdeck
@@ -13,12 +12,12 @@ source:
   sha256: 82b93da4b1118496d3e0dfaccaad415335350b0871d1f6fdf195e2324173e39f
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
-  skip: true  # [win]
+  # Checking windows to see if it passes. Uncomment the line if it fails.
+  # skip: true  # [win]
 
 requirements:
   build:
@@ -51,7 +50,6 @@ requirements:
     - r-spatialwidget >=0.2.5
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-colourvalues >=0.3.9
     - r-geojsonsf >=2.0.3
     - r-googlepolylines >=0.7.2
