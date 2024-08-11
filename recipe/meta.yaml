@@ -1,6 +1,5 @@
 {% set version = "0.3.5" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-mapdeck
@@ -13,15 +12,30 @@ source:
   sha256: 82b93da4b1118496d3e0dfaccaad415335350b0871d1f6fdf195e2324173e39f
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
-  skip: true  # [win]
+  # Checking windows to see if it passes. Uncomment the line if it fails.
+  # skip: true  # [win]
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+    - r-bh                         # [build_platform != target_platform]
+    - r-colourvalues               # [build_platform != target_platform]
+    - r-geojsonsf                  # [build_platform != target_platform]
+    - r-geometries                 # [build_platform != target_platform]
+    - r-googlepolylines            # [build_platform != target_platform]
+    - r-htmlwidgets                # [build_platform != target_platform]
+    - r-interleave                 # [build_platform != target_platform]
+    - r-jsonify                    # [build_platform != target_platform]
+    - r-magrittr                   # [build_platform != target_platform]
+    - r-rapidjsonr                 # [build_platform != target_platform]
+    - r-rcpp                       # [build_platform != target_platform]
+    - r-sfheaders                  # [build_platform != target_platform]
+    - r-shiny                      # [build_platform != target_platform]
+    - r-spatialwidget              # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
     - {{ stdlib('c') }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
@@ -51,7 +65,6 @@ requirements:
     - r-spatialwidget >=0.2.5
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-colourvalues >=0.3.9
     - r-geojsonsf >=2.0.3
     - r-googlepolylines >=0.7.2
