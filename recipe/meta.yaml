@@ -21,6 +21,21 @@ build:
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-magrittr                 # [build_platform != target_platform]
+    - r-sfheaders                # [build_platform != target_platform]
+    - r-rapidjsonr               # [build_platform != target_platform]
+    - r-interleave               # [build_platform != target_platform]
+    - r-colourvalues             # [build_platform != target_platform]
+    - r-htmlwidgets              # [build_platform != target_platform]
+    - r-jsonify                  # [build_platform != target_platform]
+    - r-shiny                    # [build_platform != target_platform]
+    - r-googlepolylines          # [build_platform != target_platform]
+    - r-spatialwidget            # [build_platform != target_platform]
+    - r-rcpp                     # [build_platform != target_platform]
+    - r-geometries               # [build_platform != target_platform]
+    - r-bh                       # [build_platform != target_platform]
+    - r-geojsonsf                # [build_platform != target_platform]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
     - r-bh                         # [build_platform != target_platform]
     - r-colourvalues               # [build_platform != target_platform]
